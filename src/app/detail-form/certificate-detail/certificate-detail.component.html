@@ -1,0 +1,18 @@
+<h1 class="text-center"> Welcome {{formData.name}}</h1>
+<form [formGroup]="cmeDetailForm">
+  <div class="form-group mb-4">
+    <label class="mb-2">Please Enter Your Certificate </label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="certificate_name"
+    />
+    <div *ngIf="cmeDetailForm.controls['certificate_name'].touched && cmeDetailForm.controls['certificate_name'].errors?.['required']">
+      certificate name is required
+    </div>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-primary" [disabled]="!cmeDetailForm.valid"
+     (click)="next()">Submit</button>
+  </div>
+</form>
