@@ -1,0 +1,13 @@
+<form [formGroup]="form">
+  <label>Please Select Option</label>
+  <select formControlName="country" class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
+    <option *ngFor="let country of countries" [value]="country.id">
+      {{ country.name }}
+  </option>
+  </select>
+
+  <button class="btn btn-primary d-block" type="submit" 
+  (click)="submit()"
+  [disabled]="!form.valid">Submit</button>
+
+</form>

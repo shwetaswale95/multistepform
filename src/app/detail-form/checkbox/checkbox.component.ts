@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { SignupService } from 'src/app/signup.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class CheckboxComponent implements OnInit {
     { id: 4, name: 'Vue', code : 'VUE' },
     { id: 5, name: 'jQuery', code : 'JQU' }
   ];
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: FormBuilder, private router: Router,
     private signupService: SignupService) { }
 
   ngOnInit(): void {
@@ -40,6 +41,7 @@ export class CheckboxComponent implements OnInit {
     
   submit(){
     this.signupService.setCheckBox(this.checkboxFormGroup.value);
+    this.router.navigate(['5'])
     console.log(this.checkboxFormGroup.value)
     console.log(this.signupService.getFormData())
   }
