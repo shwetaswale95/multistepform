@@ -17,6 +17,14 @@ export class SignupService {
     this.registerFromData.certificate = data.certificate_name;
   }
 
+  setRadio(data: any) {
+    this.registerFromData.gender = data.gender;
+  }
+
+  setCheckBox(data: any) {
+    this.registerFromData.ceList = data.ceList;
+  }
+
   getFormData(): RegisterFromData {
     return this.registerFromData;
   }

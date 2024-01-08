@@ -1,0 +1,16 @@
+<form [formGroup]="RadioFormGroup">
+  <p class="mb-2">Are you Part of the IMLC ? </p>
+  <label class="d-block">
+    <input type="radio" value="Male" formControlName="gender">
+      <span>male</span>
+  </label>
+  <label>
+    <input type="radio" value="Female" formControlName="gender">
+      <span>female</span>
+  </label>
+
+  <div class="text-center">
+    <button class="btn btn-primary" [disabled]="!RadioFormGroup.valid"
+     (click)="next()">GoToNext</button>
+  </div>
+</form>

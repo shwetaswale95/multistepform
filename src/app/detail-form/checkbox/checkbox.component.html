@@ -1,0 +1,15 @@
+<form [formGroup]="checkboxFormGroup">
+  <div class="form-group">
+      <label for="tehnology">Select Certificate List</label>
+      <div *ngFor="let tech of techStackList">
+        <label>
+          <input type="checkbox" [value]="tech.code" (change)="controlOnChange($event)" />
+          {{tech.name}}
+        </label>
+      </div>
+  </div>
+  
+  <button class="btn btn-primary" type="submit" 
+  (click)="submit()"
+  [disabled]="!checkboxFormGroup.valid">Submit</button>
+</form>

@@ -28,9 +28,9 @@ export class CertificateDetailComponent implements OnInit {
     this.certificateData = this.cmeDetailForm.value
     if(this.cmeDetailForm.valid) {
       this.signupService.setCertificate(this.certificateData);
-      // this.router.navigate(['2'])
-      this.formData= this.signupService.getFormData();
-      console.log(this.formData)
+      this.router.navigate(['3'])
+      // this.formData= this.signupService.getFormData();
+      // console.log(this.formData)
     }
   }
 
